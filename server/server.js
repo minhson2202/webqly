@@ -13,7 +13,6 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-app.use('/uploads', express.static('uploads'));
 
 // Database connection
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/expense-manager', {
@@ -26,7 +25,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/expenses', expenseRoutes);
 app.use('/api/receipts', receiptRoutes);
 app.use('/api/expenses', require('./routes/expenses'));
-app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
 
 
 const PORT = process.env.PORT || 5000;

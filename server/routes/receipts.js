@@ -10,7 +10,7 @@ const router = express.Router();
 // Cấu hình multer cho upload file
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
-        const uploadPath = 'uploads/receipts';
+	const uploadPath = path.join(__dirname, '../uploads/receipts');
         if (!fs.existsSync(uploadPath)) {
             fs.mkdirSync(uploadPath, { recursive: true });
         }

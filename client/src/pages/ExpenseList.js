@@ -193,7 +193,7 @@ const ExpenseList = ({ user, onLogout }) => {
                                                 <td>
                                                     {expense.receiptId ? (
                                                         <a 
-                                                            href={`/uploads/receipts/${expense.receiptId.filename}`}
+							    href={`http://localhost:5000/uploads/receipts/${expense.receiptId.filename}`}
                                                             target="_blank"
                                                             rel="noopener noreferrer"
                                                             className="receipt-link"
